@@ -1,7 +1,3 @@
-# Proyecto TodoApp
-
-## Importar ficheros html en vite con argumento raw
-```js
 import html from './app.html?raw';
 
 /**
@@ -15,4 +11,3 @@ export const App = elementId => {
         document.querySelector(elementId).append(app);
     })()
 }
-```

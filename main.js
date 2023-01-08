@@ -3,7 +3,7 @@ import store from './src/store/todo.store'
 import './style.css';
 
 //Load store
-//store.initStore();
+store.initStore();
 
 //entry point
 App("#app");

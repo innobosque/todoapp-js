@@ -1,5 +1,5 @@
 export const Filters = { //Pascal Case por tratarse de una enumeración
-    All: 'all',
+    All: 'All',
     Completed: 'Completed',
     Pending: 'Pending',
 }

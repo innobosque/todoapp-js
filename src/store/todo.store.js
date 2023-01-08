@@ -1,5 +1,5 @@
 import { Todo } from '../todos/models/todo.model';
-import { Filters } from './types';
+import { Filters } from '../types';
 
 
 
@@ -16,9 +16,9 @@ const state = {
 }
 
 const FILTERS_ACTIONS = {
-    [Filters.All]: [...state.todos],
-    [Filters.Completed]: state.todos.filter(todo => todo.done),
-    [Filters.done]: state.todos.filter(todo => !todo.done),
+    [Filters.All]: () => [...state.todos],
+    [Filters.Completed]: () => state.todos.filter(todo => todo.done),
+    [Filters.done]: () => state.todos.filter(todo => !todo.done),
     error: (filterValue) => { throw new Error(`Filter ${filterValue} not found`) },
 }
 
@@ -28,7 +28,7 @@ const FILTERS_ACTIONS = {
  * @returns {Array<Object>} - Elementos de la lista todos
 */
 const getTodos = (filterValue = Filters.All) => {
-    return FILTERS_ACTIONS[filterValue] || FILTERS_ACTIONS['error'](filterValue);
+    return FILTERS_ACTIONS[filterValue]() || FILTERS_ACTIONS['error'](filterValue);
 }
 
 //Alternativa con switch

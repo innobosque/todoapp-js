@@ -1,18 +1,11 @@
 # Proyecto TodoApp
 
-## Importar ficheros html en vite con argumento raw
-```js
-import html from './app.html?raw';
+## Paquetes
+- [uuid - npm](https://www.npmjs.com/package/uuid)
 
-/**
- * 
- * @param {String} elementId 
- */
-export const App = elementId => {
-    (()=>{
-        const app = document.createElement('div');
-        app.innerHTML = html;
-        document.querySelector(elementId).append(app);
-    })()
-}
-```
+## Vite
+
+- [Importar ficheros html en vite con argumento raw](https://vitejs.dev/guide/assets.html#importing-asset-as-string)
+    ```js
+    import html from './app.html?raw';
+    ```
